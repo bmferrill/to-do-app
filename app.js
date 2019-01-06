@@ -5,9 +5,9 @@ const toDoList = document.getElementById('toDoList');
 }
 
 function onReady() {
-  const addToDoForm = document.getElementByID('addToDoForm');
-  const newToDoText = document.getElementByID('newToDoText');
-  const toDoList = document.getElementByID('toDoList');
+  const addToDoForm = document.getElementById('addToDoForm');
+  const newToDoText = document.getElementById('newToDoText');
+  const toDoList = document.getElementById('toDoList');
 
   addToDoForm.addEventListener('submit', event => {
     event.preventDefault();
