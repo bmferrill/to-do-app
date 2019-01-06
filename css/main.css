@@ -1,0 +1,43 @@
+header {
+  text-align: center;
+}
+
+body {
+font-size: 16px;
+  margin: auto;
+  width: 75%;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+}
+
+h1 {
+  font-weight: lighter;
+}
+
+form{
+  justify-content: center;
+}
+
+label{
+  position: relative;
+  top: 9px;
+  font-weight: bold;
+}
+
+input{
+  position: relative;
+  margin: 0 10px 0 10px;
+}
+
+ul{
+margin: 0, auto;
+}
+
+li{
+  justify-content: center;
+}
+
+@media screen and (max-width: 1024px) {
+   header.mdl-layout__header {
+     display: flex;
+   }
