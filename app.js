@@ -1,18 +1,6 @@
 function onReady() {
-<<<<<<< HEAD
-const addToDoForm = document.getElementById('addToDoForm');
-const newToDoText = document.getElementById('newToDoText');
-const toDoList = document.getElementById('toDoList');
-}
-
-function onReady() {
-  const addToDoForm = document.getElementById('addToDoForm');
-  const newToDoText = document.getElementById('newToDoText');
-  const toDoList = document.getElementById('toDoList');
-=======
   const toDos = [];
   const addToDoForm = document.getElementById('addToDoForm');
->>>>>>> checkpoint-6-dom-dos
 
   function createNewToDo() {
     const newToDoText = document.getElementById('newToDoText');
