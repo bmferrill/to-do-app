@@ -1,18 +1,7 @@
 function onReady() {
-<<<<<<< HEAD
-const addToDoForm = document.getElementById('addToDoForm');
-const newToDoText = document.getElementById('newToDoText');
-const toDoList = document.getElementById('toDoList');
-}
-
-function onReady() {
+  let id = 0;
+  let toDos = [];
   const addToDoForm = document.getElementById('addToDoForm');
-  const newToDoText = document.getElementById('newToDoText');
-  const toDoList = document.getElementById('toDoList');
-=======
-  const toDos = [];
-  const addToDoForm = document.getElementById('addToDoForm');
->>>>>>> checkpoint-6-dom-dos
 
   function createNewToDo() {
     const newToDoText = document.getElementById('newToDoText');
@@ -20,28 +9,46 @@ function onReady() {
 
     toDos.push({
       title: newToDoText.value,
-      complete: false
+      complete: false,
+      id: ++id
     });
     newToDoText.value = '';
 
     renderTheUI();
   }
 
+  function deleteToDo(id) {
+    return toDos.filter(toDo => toDo.id !== id);
+  }
+
   function renderTheUI() {
     const toDoList = document.getElementById('toDoList');
-
     toDoList.textContent = '';
 
     toDos.forEach(function(toDo) {
       const newLi = document.createElement('li');
+
       const checkbox = document.createElement('input');
       checkbox.type = "checkbox";
+
+      const deleteButton = document.createElement('button');
+      deleteButton.type = "button";
+      deleteButton.textContent = "Delete";
 
       newLi.textContent = toDo.title;
 
       toDoList.appendChild(newLi);
       newLi.appendChild(checkbox);
+      newLi.appendChild(deleteButton);
+
+      deleteButton.addEventListener('click', () => {
+        toDos = deleteToDo(toDo.id);
+        renderTheUI();
+      });
+
     });
+
+
   }
 
   addToDoForm.addEventListener('submit',event => {
